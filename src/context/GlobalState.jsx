@@ -37,7 +37,7 @@ export const GlobalProvider = ({ children }) => {
 
   async function getTransaction(query) {
     try {
-      const res = await axios.get(`/api/transactions/${query}`);
+      const res = await axios.get(`https://pacific-river-97239.herokuapp.com/api/transactions/${query}`);
       dispatch({
         type: 'GET_TRANSACTION',
         payload: res.data.data
@@ -52,7 +52,7 @@ export const GlobalProvider = ({ children }) => {
   
   async function getTransactions() {
     try {
-      const res = await axios.get('/api/transactions');
+      const res = await axios.get('https://pacific-river-97239.herokuapp.com/api/transactions');
       // console.log(res)
       dispatch({
         type: 'GET_TRANSACTIONS',
@@ -68,7 +68,7 @@ export const GlobalProvider = ({ children }) => {
 
   async function deleteTransaction(id) {
     try {
-      await axios.delete(`/api/transactions/${id}`);
+      await axios.delete(`https://pacific-river-97239.herokuapp.com/api/transactions/${id}`);
       dispatch({
         type: 'DELETE_TRANSACTION',
         payload: id
@@ -83,7 +83,7 @@ export const GlobalProvider = ({ children }) => {
 
   async function addTransaction(transaction) {
     try {
-      const res = await axios.post('/api/transactions', transaction, config);
+      const res = await axios.post('https://pacific-river-97239.herokuapp.com/api/transactions', transaction, config);
       dispatch({
         type: 'ADD_TRANSACTION',
         payload: res.data.data
@@ -100,7 +100,7 @@ export const GlobalProvider = ({ children }) => {
 
   async function updateTransaction(id, transaction) {
     try {
-      const res = await axios.put(`/api/transactions/${id}`, transaction, config);
+      const res = await axios.put(`https://pacific-river-97239.herokuapp.com/api/transactions/${id}`, transaction, config);
       dispatch({
         type: 'UPDATE_TRANSACTION',
         payload: res.data.data
@@ -121,7 +121,7 @@ export const GlobalProvider = ({ children }) => {
 
   async function registerUser(user) {
     try {
-      const res = await axios.post('/api/users', user, config);
+      const res = await axios.post('https://pacific-river-97239.herokuapp.com/api/users', user, config);
       dispatch({
         type: 'REGISTER_USER',
         payload: res.data
@@ -136,7 +136,7 @@ export const GlobalProvider = ({ children }) => {
 
   async function loginUser(user) {
     try {
-      const res = await axios.post('/api/auth', user, config);
+      const res = await axios.post('https://pacific-river-97239.herokuapp.com/api/auth', user, config);
       dispatch({
         type: 'LOGIN_USER',
         // res.data = { success: , token: , user: { id: , name: , email: }}
@@ -152,7 +152,7 @@ export const GlobalProvider = ({ children }) => {
 
   async function loadUser() {
     try {
-      const res = await axios.get('/api/users');
+      const res = await axios.get('https://pacific-river-97239.herokuapp.com/api/users');
       dispatch({
         type: 'LOAD_USER',
         payload: res.data
@@ -167,7 +167,7 @@ export const GlobalProvider = ({ children }) => {
 
   async function updateUser(id, user) {
     try {
-      const res = await axios.put(`/api/users/${id}`, user, config);
+      const res = await axios.put(`https://pacific-river-97239.herokuapp.com/api/users/${id}`, user, config);
       dispatch({
         type: 'UPDATE_USER',
         payload: res.data,
