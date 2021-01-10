@@ -145,7 +145,7 @@ export const GlobalProvider = ({ children }) => {
     } catch (err) {
       dispatch({
         type: 'LOGIN_ERROR',
-        payload: err.response.data
+        payload: err.response
       });
     }
   }
